@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Travel Tourism</string>
+    <string name="title_app_bar">Pacotes</string>
+    <string name="banner_inicial_do_pacote">Banner inicial do pacote</string>
+    <string name="especiais">Especiais</string>
+    <string name="pais">Brasil</string>
+    <string name="foto_da_cidade">Foto da Cidade</string>
+    <string name="preco_final">Preço Final:</string>
+    <string name="realizar_pagamento">Realizar Pagamento</string>
 </resources>

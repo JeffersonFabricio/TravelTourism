@@ -1,7 +1,6 @@
 package programacao.mobile.android.traveltourism.ui.adapter;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,11 +13,17 @@ import java.util.List;
 
 import programacao.mobile.android.traveltourism.R;
 import programacao.mobile.android.traveltourism.model.Pacote;
+import programacao.mobile.android.traveltourism.util.DiasUtil;
+import programacao.mobile.android.traveltourism.util.MoedaUtil;
+import programacao.mobile.android.traveltourism.util.ResourceUtil;
 
 public class ListaPacotesAdapter extends BaseAdapter {
 
+    public static final String DRAWABLE = "drawable";
+    public static final String DIA = " Dia";
+    public static final String DIAS = " Dias";
     private final List<Pacote> pacotes;
-    private Context context;
+    private final Context context;
 
     public ListaPacotesAdapter(List<Pacote> pacotes, Context context){
         this.pacotes = pacotes;
@@ -46,23 +51,37 @@ public class ListaPacotesAdapter extends BaseAdapter {
 
         Pacote pacote = pacotes.get(posicao);
 
-        TextView local = viewCriada.findViewById(R.id.item_pacote_txtNomeCidade);
-        local.setText(pacote.getLocal());
-
-        ImageView img = viewCriada.findViewById(R.id.item_pacote_imgFotoCidade);
-        Resources resources = context.getResources();
-        int idDoDrawable = resources.getIdentifier(pacote.getImg()
-                , "drawable", context.getPackageName());
-        Drawable drawableImgPacote = resources.getDrawable(idDoDrawable);
-        img.setImageDrawable(drawableImgPacote);
-
-        TextView dias = viewCriada.findViewById(R.id.item_pacote_txtDias);
-        dias.setText(pacote.getDias() + "dias");
-
-        TextView preco = viewCriada.findViewById(R.id.item_pacote_txtValor);
-        preco.setText(pacote.getPreco().toString());
+        mostraLocal(viewCriada, pacote);
+        mostraImg(viewCriada, pacote);
+        mostraDias(viewCriada, pacote);
+        mostraPreco(viewCriada, pacote);
 
         return viewCriada;
+    }
+
+    private void mostraPreco(View viewCriada, Pacote pacote) {
+        TextView preco = viewCriada.findViewById(R.id.item_pacote_txtValor);
+        String moedaBrasileira = MoedaUtil.formataParaBrasileiro(pacote.getPreco());
+        preco.setText(moedaBrasileira);
+
+    }
+
+    private void mostraDias(View viewCriada, Pacote pacote) {
+
+        TextView dias = viewCriada.findViewById(R.id.item_pacote_txtDias);
+        String diasEmTexto = DiasUtil.formataEmTexto(pacote.getDias());
+        dias.setText(diasEmTexto);
+    }
+
+    private void mostraImg(View viewCriada, Pacote pacote) {
+        ImageView img = viewCriada.findViewById(R.id.item_pacote_imgFotoCidade);
+        Drawable drawableImgPacote = ResourceUtil.devolveDrawable(context, pacote.getImg());
+        img.setImageDrawable(drawableImgPacote);
+    }
+
+    private void mostraLocal(View viewCriada, Pacote pacote) {
+        TextView local = viewCriada.findViewById(R.id.item_pacote_txtNomeCidade);
+        local.setText(pacote.getLocal());
     }
 
 }
