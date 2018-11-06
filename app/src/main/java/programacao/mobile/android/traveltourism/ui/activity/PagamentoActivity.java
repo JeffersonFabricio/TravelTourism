@@ -1,5 +1,6 @@
 package programacao.mobile.android.traveltourism.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
@@ -24,6 +25,9 @@ public class PagamentoActivity extends AppCompatActivity {
         Pacote pacoteRecife = new Pacote("Recife", "recife_pe", 2, new BigDecimal("243.99"));
 
         mostraPreco(pacoteRecife);
+
+        Intent intent = new Intent(this, ResumoCompraActivity.class);
+        startActivity(intent);
 
     }
 

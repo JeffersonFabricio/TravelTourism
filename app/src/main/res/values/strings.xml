@@ -16,4 +16,8 @@
     <string name="cvc">CVC</string>
     <string name="finalizar_compra">Finalizar compra</string>
     <string name="mascara_nome_cartao">abcdefghijklmnopqrstuvxzwyçáéíóúABCDEFGHIJKLMNOPQRSTUVXZWYÇÁÉÍÓÚ\u0020</string>
+    <string name="parabens">Parabéns!</string>
+    <string name="compra_realizada_com_sucesso">Compra realizada com sucesso :)</string>
+    <string name="confira_o_resumo_de_compra">Confira o resumo de compra:</string>
+    <string name="blackground_laranja_em_cima_do_nome_parabens">Blackground laranja em cima do nome Parabéns</string>
 </resources>
