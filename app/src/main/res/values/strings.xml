@@ -12,4 +12,7 @@
     <string name="mm">MM</string>
     <string name="aa">AA</string>
     <string name="nome_cartao">Nome do cartão</string>
+    <string name="valor_da_compra">Valor da compra:</string>
+    <string name="cvc">CVC</string>
+    <string name="finalizar_compra">Finalizar compra</string>
 </resources>
