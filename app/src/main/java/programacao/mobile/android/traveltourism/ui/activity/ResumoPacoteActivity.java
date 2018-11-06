@@ -9,8 +9,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.math.BigDecimal;
-
 import programacao.mobile.android.traveltourism.R;
 import programacao.mobile.android.traveltourism.model.Pacote;
 import programacao.mobile.android.traveltourism.util.DataUtil;
@@ -29,22 +27,26 @@ public class ResumoPacoteActivity extends AppCompatActivity {
 
         setTitle(TITULO_APP_BAR);
 
-        Pacote pacoteRecife = new Pacote("Recife", "recife_pe", 2, new BigDecimal("243.99"));
+        Intent intent = getIntent();
+        if(intent.hasExtra("pacote")){
+            final Pacote pacote = (Pacote) intent.getSerializableExtra("pacote");
 
-        mostraLocal(pacoteRecife);
-        mostraImg(pacoteRecife);
-        mostraDias(pacoteRecife);
-        mostraPreco(pacoteRecife);
-        mostraData(pacoteRecife);
+            mostraLocal(pacote);
+            mostraImg(pacote);
+            mostraDias(pacote);
+            mostraPreco(pacote);
+            mostraData(pacote);
 
-        Button botaoRealizaPagamento = findViewById(R.id.resumo_pacote_btnPagamento);
-        botaoRealizaPagamento.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ResumoPacoteActivity.this, PagamentoActivity.class);
-                startActivity(intent);
-            }
-        });
+            Button botaoRealizaPagamento = findViewById(R.id.resumo_pacote_btnPagamento);
+            botaoRealizaPagamento.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(ResumoPacoteActivity.this, PagamentoActivity.class);
+                    intent.putExtra("pacote", pacote);
+                    startActivity(intent);
+                }
+            });
+        }
 
     }
 
