@@ -64,8 +64,8 @@
         android:inputType="number"
         android:maxLength="2"
         android:textAlignment="center"
-        app:layout_constraintStart_toStartOf="@+id/pagamento_editTxtNumeroCartao"
-        app:layout_constraintTop_toBottomOf="@+id/pagamento_editTxtNumeroCartao" />
+        app:layout_constraintBottom_toBottomOf="@+id/pagamento_editTxtCvcCartao"
+        app:layout_constraintStart_toStartOf="@+id/pagamento_editTxtNumeroCartao" />
 
     <EditText
         android:id="@+id/pagamento_editTxtAnoCartao"
@@ -75,8 +75,21 @@
         android:inputType="number"
         android:maxLength="2"
         android:textAlignment="center"
-        app:layout_constraintStart_toEndOf="@+id/pagamento_editTxtMesCartao"
-        app:layout_constraintTop_toBottomOf="@+id/pagamento_editTxtNumeroCartao" />
+        app:layout_constraintBottom_toBottomOf="@+id/pagamento_editTxtCvcCartao"
+        app:layout_constraintStart_toEndOf="@+id/pagamento_editTxtMesCartao" />
+
+    <EditText
+        android:id="@+id/pagamento_editTxtCvcCartao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="CVC"
+        android:drawableStart="@drawable/ic_cvc_cartao_de_credito"
+        android:drawableLeft="@drawable/ic_cvc_cartao_de_credito"
+        android:inputType="number"
+        android:maxLength="3"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@+id/pagamento_editTxtNumeroCartao"
+        app:layout_constraintEnd_toEndOf="@+id/pagamento_editTxtNumeroCartao" />
 
 
 </android.support.constraint.ConstraintLayout>
