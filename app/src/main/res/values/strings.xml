@@ -7,4 +7,8 @@
     <string name="foto_da_cidade">Foto da Cidade</string>
     <string name="preco_final">Preço Final:</string>
     <string name="realizar_pagamento">Realizar Pagamento</string>
+    <string name="numero_cartao">Número do cartão</string>
+    <string name="informacoes_do_cartao">Digite as informações do cartão de crédito que você deseja usar para o pagamento</string>
+    <string name="mm">MM</string>
+    <string name="aa">AA</string>
 </resources>
