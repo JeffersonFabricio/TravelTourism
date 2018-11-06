@@ -11,4 +11,5 @@
     <string name="informacoes_do_cartao">Digite as informações do cartão de crédito que você deseja usar para o pagamento</string>
     <string name="mm">MM</string>
     <string name="aa">AA</string>
+    <string name="nome_cartao">Nome do cartão</string>
 </resources>
