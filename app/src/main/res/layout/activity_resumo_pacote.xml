@@ -3,28 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.activity.ResumoPacoteActivity">
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/resumo_pacote_img"
         android:layout_width="0dp"
         android:layout_height="140dp"
+        android:contentDescription="@string/banner_inicial_do_pacote"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/recife_pe"
-        android:contentDescription="TODO" />
+        tools:srcCompat="@drawable/recife_pe" />
 
     <TextView
         android:id="@+id/resumo_pacote_local"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_margin="8dp"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,6 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
+        android:gravity="end"
         android:textAlignment="viewEnd"
         android:textColor="@android:color/holo_green_dark"
         android:textSize="20sp"
@@ -77,10 +76,7 @@
         android:id="@+id/resumo_pacote_btnPagamento"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_margin="8dp"
         android:background="@drawable/botao_redondo_laranja"
         android:text="@string/realizar_pagamento"
         android:textColor="@android:color/white"
