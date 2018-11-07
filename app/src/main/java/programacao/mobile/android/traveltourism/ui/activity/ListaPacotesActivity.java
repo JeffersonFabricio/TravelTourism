@@ -14,6 +14,8 @@ import programacao.mobile.android.traveltourism.dao.PacoteDAO;
 import programacao.mobile.android.traveltourism.model.Pacote;
 import programacao.mobile.android.traveltourism.ui.adapter.ListaPacotesAdapter;
 
+import static programacao.mobile.android.traveltourism.ui.activity.PacoteActivityConstantes.PACOTE;
+
 public class ListaPacotesActivity extends AppCompatActivity {
 
     public static final String TITLE_APPBAR = "Pacotes";
@@ -35,8 +37,12 @@ public class ListaPacotesActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Pacote pacoteClicado = pacotes.get(position);
+                vaiParaResumoPacote(pacoteClicado);
+            }
+
+            private void vaiParaResumoPacote(Pacote pacoteClicado) {
                 Intent intent = new Intent(ListaPacotesActivity.this, ResumoPacoteActivity.class);
-                intent.putExtra("pacote", pacoteClicado);
+                intent.putExtra(PACOTE, pacoteClicado);
                 startActivity(intent);
             }
         });

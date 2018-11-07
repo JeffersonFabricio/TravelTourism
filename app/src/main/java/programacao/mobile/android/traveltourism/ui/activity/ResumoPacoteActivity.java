@@ -16,6 +16,8 @@ import programacao.mobile.android.traveltourism.util.DiasUtil;
 import programacao.mobile.android.traveltourism.util.MoedaUtil;
 import programacao.mobile.android.traveltourism.util.ResourceUtil;
 
+import static programacao.mobile.android.traveltourism.ui.activity.PacoteActivityConstantes.PACOTE;
+
 public class ResumoPacoteActivity extends AppCompatActivity {
 
     public static final String TITULO_APP_BAR = "Resumo do Pacote";
@@ -27,9 +29,14 @@ public class ResumoPacoteActivity extends AppCompatActivity {
 
         setTitle(TITULO_APP_BAR);
 
+        carregaPacoteRecebido();
+
+    }
+
+    private void carregaPacoteRecebido() {
         Intent intent = getIntent();
-        if(intent.hasExtra("pacote")){
-            final Pacote pacote = (Pacote) intent.getSerializableExtra("pacote");
+            if(intent.hasExtra(PACOTE)){
+            final Pacote pacote = (Pacote) intent.getSerializableExtra(PACOTE);
 
             mostraLocal(pacote);
             mostraImg(pacote);
@@ -42,12 +49,11 @@ public class ResumoPacoteActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(ResumoPacoteActivity.this, PagamentoActivity.class);
-                    intent.putExtra("pacote", pacote);
+                    intent.putExtra(PACOTE, pacote);
                     startActivity(intent);
                 }
             });
         }
-
     }
 
     private void mostraData(Pacote pacote) {
