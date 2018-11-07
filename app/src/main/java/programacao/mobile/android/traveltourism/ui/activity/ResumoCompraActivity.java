@@ -13,6 +13,8 @@ import programacao.mobile.android.traveltourism.util.DataUtil;
 import programacao.mobile.android.traveltourism.util.MoedaUtil;
 import programacao.mobile.android.traveltourism.util.ResourceUtil;
 
+import static programacao.mobile.android.traveltourism.ui.activity.PacoteActivityConstantes.PACOTE;
+
 public class ResumoCompraActivity extends AppCompatActivity {
 
     public static final String TITLE_APPBAR = "Resumo da compra";
@@ -23,17 +25,23 @@ public class ResumoCompraActivity extends AppCompatActivity {
         setContentView(R.layout.activity_resumo_compra);
 
         setTitle(TITLE_APPBAR);
+        carregaPacoteRecebido();
 
+    }
+
+    private void carregaPacoteRecebido() {
         Intent intent = getIntent();
-        if(intent.hasExtra("pacote")){
-            Pacote pacote = (Pacote) intent.getSerializableExtra("pacote");
-
-            mostraLocal(pacote);
-            mostraImg(pacote);
-            mostraPreco(pacote);
-            mostraData(pacote);
+        if(intent.hasExtra(PACOTE)){
+            Pacote pacote = (Pacote) intent.getSerializableExtra(PACOTE);
+            inicializaCampos(pacote);
         }
+    }
 
+    private void inicializaCampos(Pacote pacote) {
+        mostraLocal(pacote);
+        mostraImg(pacote);
+        mostraPreco(pacote);
+        mostraData(pacote);
     }
 
     private void mostraData(Pacote pacote) {
