@@ -38,22 +38,33 @@ public class ResumoPacoteActivity extends AppCompatActivity {
             if(intent.hasExtra(PACOTE)){
             final Pacote pacote = (Pacote) intent.getSerializableExtra(PACOTE);
 
-            mostraLocal(pacote);
-            mostraImg(pacote);
-            mostraDias(pacote);
-            mostraPreco(pacote);
-            mostraData(pacote);
-
-            Button botaoRealizaPagamento = findViewById(R.id.resumo_pacote_btnPagamento);
-            botaoRealizaPagamento.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(ResumoPacoteActivity.this, PagamentoActivity.class);
-                    intent.putExtra(PACOTE, pacote);
-                    startActivity(intent);
-                }
-            });
+                inicializaCampos(pacote);
+                configuraBtn(pacote);
         }
+    }
+
+    private void configuraBtn(final Pacote pacote) {
+        Button botaoRealizaPagamento = findViewById(R.id.resumo_pacote_btnPagamento);
+        botaoRealizaPagamento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                vaiParaPagamento(pacote);
+            }
+        });
+    }
+
+    private void vaiParaPagamento(Pacote pacote) {
+        Intent intent = new Intent(ResumoPacoteActivity.this, PagamentoActivity.class);
+        intent.putExtra(PACOTE, pacote);
+        startActivity(intent);
+    }
+
+    private void inicializaCampos(Pacote pacote) {
+        mostraLocal(pacote);
+        mostraImg(pacote);
+        mostraDias(pacote);
+        mostraPreco(pacote);
+        mostraData(pacote);
     }
 
     private void mostraData(Pacote pacote) {
