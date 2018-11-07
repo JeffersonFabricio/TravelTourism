@@ -31,7 +31,7 @@ public class ResumoCompraActivity extends AppCompatActivity {
 
     private void carregaPacoteRecebido() {
         Intent intent = getIntent();
-        if(intent.hasExtra(PACOTE)){
+        if (intent.hasExtra(PACOTE)) {
             Pacote pacote = (Pacote) intent.getSerializableExtra(PACOTE);
             inicializaCampos(pacote);
         }
