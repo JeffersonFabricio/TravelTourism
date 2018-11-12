@@ -8,7 +8,7 @@ public class DataBase extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "my_database";
     public static final String TABLE_NAME = "traveltourism_tbl";
 
-    public Database(Context context){
+    public DataBase(Context context){
         super(context, DATABASE_NAME, null, 1);
     }
 
