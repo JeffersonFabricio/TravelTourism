@@ -1,10 +1,16 @@
 package programacao.mobile.android.traveltourism.model;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 
+@Entity
 public class Pacote implements Serializable {
 
+    @PrimaryKey(autoGenerate = true)
+    private int id;
     private String local;
     private String img;
     private int dias;
@@ -15,6 +21,14 @@ public class Pacote implements Serializable {
         setImg(img);
         setDias(dias);
         setPreco(preco);
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setLocal(String local) {
