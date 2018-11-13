@@ -20,4 +20,8 @@
     <string name="compra_realizada_com_sucesso">Compra realizada com sucesso :)</string>
     <string name="confira_o_resumo_de_compra">Confira o resumo de compra:</string>
     <string name="blackground_laranja_em_cima_do_nome_parabens">Blackground laranja em cima do nome Parabéns</string>
+    <string name="escolha_uma_das_opcoes">Escolha uma das opções:</string>
+    <string name="fundo_azul_com_frase_de_escolha_por_cima">Fundo azul com frase de escolha por cima</string>
+    <string name="verificar_ofertas">Verificar ofertas</string>
+    <string name="verificar_cartoes_cadastrados">Verificar cartões cadastrados</string>
 </resources>
