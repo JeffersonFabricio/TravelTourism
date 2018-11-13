@@ -1,8 +1,10 @@
 package programacao.mobile.android.traveltourism.ui.activity;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 
 import programacao.mobile.android.traveltourism.R;
 
@@ -17,7 +19,14 @@ public class DashboardActivity extends AppCompatActivity {
 
         setTitle(PROGRAMACAO_MOBILE);
 
-        Intent intent = new Intent(DashboardActivity.this, ListaPacotesActivity.class);
-        startActivity(intent);
+        Button btnOfertas = findViewById(R.id.dashboard_btnVerOfertas);
+        btnOfertas.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intencao = new Intent(DashboardActivity.this, ListaPacotesActivity.class);
+                startActivity(intencao);
+            }
+        });
+
     }
 }
