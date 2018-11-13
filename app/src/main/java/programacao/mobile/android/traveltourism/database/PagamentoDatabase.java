@@ -8,5 +8,5 @@ import programacao.mobile.android.traveltourism.model.Pagamento;
 @Database(entities = {Pagamento.class}, version = 1)
 public abstract class PagamentoDatabase extends RoomDatabase {
 
-    abstract PagamentoDao getPagamentoDao();
+    public abstract PagamentoDao getPagamentoDao();
 }
