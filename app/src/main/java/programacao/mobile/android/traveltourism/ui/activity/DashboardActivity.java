@@ -19,14 +19,27 @@ public class DashboardActivity extends AppCompatActivity {
 
         setTitle(PROGRAMACAO_MOBILE);
 
-        Button btnOfertas = findViewById(R.id.dashboard_btnVerOfertas);
-        btnOfertas.setOnClickListener(new View.OnClickListener(){
+        vaiParaPacotesActivity();
+
+        Button btnOfertas = findViewById(R.id.dashboard_VerificarCartoesCadastrado);
+        btnOfertas.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
+                //Intent intencao = new Intent(DashboardActivity.this, .class);
+                //startActivity(intencao);
+            }
+        });
+
+    }
+
+    private void vaiParaPacotesActivity() {
+        Button btnOfertas = findViewById(R.id.dashboard_btnVerOfertas);
+        btnOfertas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 Intent intencao = new Intent(DashboardActivity.this, ListaPacotesActivity.class);
                 startActivity(intencao);
             }
         });
-
     }
 }
