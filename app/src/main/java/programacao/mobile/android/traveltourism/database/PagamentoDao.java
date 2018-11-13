@@ -6,7 +6,7 @@ import android.arch.persistence.room.Insert;
 import programacao.mobile.android.traveltourism.model.Pacote;
 
 @Dao
-public interface PacoteDao {
+public interface PagamentoDao {
 
     @Insert
     void insere(Pacote pacote);

@@ -5,8 +5,8 @@ import android.content.Context;
 
 public class GeradorBancoDeDados {
 
-    public PacoteDatabase gera(Context context){
-        PacoteDatabase travelTurismDB = Room.databaseBuilder(context, PacoteDatabase.class, "TravelTurismDB").build();
+    public PagamentoDatabase gera(Context context){
+        PagamentoDatabase travelTurismDB = Room.databaseBuilder(context, PagamentoDatabase.class, "TravelTurismDB").build();
 
         return travelTurismDB;
     }
